@@ -9,11 +9,9 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro",
-    "start": "serve dist"
+    "astro": "astro"
   },
   "dependencies": {
-    "astro": "^6.1.6",
-    "serve": "^14.2.6"
+    "astro": "^6.1.6"
   }
 }

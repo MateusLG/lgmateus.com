@@ -39,15 +39,17 @@ export const featured: FeaturedProject[] = [
     stack: ["Python", "FastAPI", "JavaScript", "PostgreSQL", "Cloudflare"],
     badge: "Open Source",
   },
-];
-
-export const others: OtherProject[] = [
   {
     name: "VemDaChina",
     desc: "E-commerce de importação direta da China. Logística e burocracia resolvidas para o cliente, do pedido à entrega.",
-    url: "https://vemdachina.com/",
+    url: null,
+    demo: "https://vemdachina.com/",
     stack: ["TypeScript", "React", "JavaScript", "Cloudflare"],
+    badge: "Produção",
   },
+];
+
+export const others: OtherProject[] = [
   {
     name: "LampIAo",
     desc: "Aplicação web que usa IA para estruturar ideias em insights organizados.",
