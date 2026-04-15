@@ -5,6 +5,7 @@ export interface FeaturedProject {
   demo: string | null;
   stack: string[];
   badge: string;
+  image?: string;
 }
 
 export interface OtherProject {
@@ -39,17 +40,15 @@ export const featured: FeaturedProject[] = [
     stack: ["Python", "FastAPI", "JavaScript", "PostgreSQL", "Cloudflare"],
     badge: "Open Source",
   },
-  {
-    name: "VemDaChina",
-    desc: "E-commerce de importação direta da China. Logística e burocracia resolvidas para o cliente, do pedido à entrega.",
-    url: null,
-    demo: "https://vemdachina.com/",
-    stack: ["TypeScript", "React", "JavaScript", "Cloudflare"],
-    badge: "Produção",
-  },
 ];
 
 export const others: OtherProject[] = [
+  {
+    name: "VemDaChina",
+    desc: "E-commerce de importação direta da China. Logística e burocracia resolvidas para o cliente, do pedido à entrega.",
+    url: "https://vemdachina.com/",
+    stack: ["TypeScript", "React", "Cloudflare"],
+  },
   {
     name: "LampIAo",
     desc: "Aplicação web que usa IA para estruturar ideias em insights organizados.",

@@ -31,3 +31,4 @@ desktop.ini
 # ── Working notes ────────────────────────────────────────
 *.md
 !README.md
+!BACKLOG.md
