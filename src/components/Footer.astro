@@ -1,0 +1,71 @@
+---
+---
+
+<footer>
+  <span>© 2026 lgmateus</span>
+  <span class="sep" aria-hidden="true">—</span>
+  <span class="muted">built with care</span>
+</footer>
+
+<button id="back-to-top" aria-label="Voltar ao topo" title="Voltar ao topo">↑</button>
+
+<style>
+  footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 1.5rem 2rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.75rem;
+    color: var(--text-muted);
+  }
+
+  .sep {
+    opacity: 0.3;
+  }
+
+  #back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 2.25rem;
+    height: 2.25rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.15s;
+    opacity: 0;
+    pointer-events: none;
+    font-family: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #back-to-top.visible {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  #back-to-top:hover {
+    border-color: var(--border-hover);
+    color: var(--text);
+    background: var(--bg-card-hover);
+  }
+</style>
+
+<script>
+  const btn = document.getElementById('back-to-top')!;
+
+  window.addEventListener('scroll', () => {
+    btn.classList.toggle('visible', window.scrollY > 400);
+  }, { passive: true });
+
+  btn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>

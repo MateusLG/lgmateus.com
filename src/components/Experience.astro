@@ -1,0 +1,218 @@
+---
+const jobs = [
+  {
+    company: "V2Tech Soluções",
+    role: "Desenvolvedor Fullstack",
+    period: "out/2025 — presente",
+    type: "PJ",
+    description:
+      "Desenvolvimento de sistemas web full-stack para clientes de diferentes setores, com foco em performance, escalabilidade e automações.",
+    highlights: [
+      "Arquitetura de APIs RESTful com Python e FastAPI",
+      "Desenvolvimento de interfaces com React e TypeScript",
+      "Automações de processos com N8N e integrações de IA",
+      "Deploy e gerenciamento de infraestrutura em cloud (GCP, AWS)",
+    ],
+  },
+  {
+    company: "Embratur",
+    role: "Desenvolvedor Fullstack",
+    period: "out/2025 — presente",
+    type: "Alocado via V2Tech · Híbrido",
+    description:
+      "Alocado na Embratur (Agência Brasileira de Promoção Internacional do Turismo) como desenvolvedor full-stack, trabalhando em regime híbrido.",
+    highlights: [
+      "Sistema de gerenciamento de +1.000 ativos de TI",
+      "Portal de chamados de suporte integrado ao Monday.com com triagem por IA",
+      "Sistema de patrocínio de eventos internacionais de turismo",
+      "Desenvolvimento de landing pages e hotsites para promoção internacional do turismo brasileiro",
+      "Suporte direto a usuários e resolução ágil de incidentes",
+    ],
+  },
+];
+---
+
+<section id="experiencia">
+  <div class="section-inner">
+    <header class="section-header">
+      <span class="section-tag">// experiência</span>
+      <h2>Onde trabalhei</h2>
+    </header>
+
+    <div class="timeline">
+      {jobs.map((job, idx) => (
+        <article class="job">
+          <div class="job-index" aria-hidden="true">0{idx + 1}</div>
+          <div class="job-body">
+            <div class="job-meta">
+              <div>
+                <h3 class="job-company">{job.company}</h3>
+                <p class="job-role">{job.role}</p>
+              </div>
+              <div class="job-info">
+                <span class="badge">{job.type}</span>
+                <time class="job-period">{job.period}</time>
+              </div>
+            </div>
+            <p class="job-desc">{job.description}</p>
+            <ul class="job-highlights">
+              {job.highlights.map((h) => (
+                <li><span aria-hidden="true">→</span> {h}</li>
+              ))}
+            </ul>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  #experiencia {
+    padding: 6rem 2rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .section-inner {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .section-header {
+    margin-bottom: 3rem;
+  }
+
+  .section-tag {
+    display: block;
+    font-size: 0.78rem;
+    color: var(--blue);
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.05em;
+  }
+
+  h2 {
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  .timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .job {
+    display: grid;
+    grid-template-columns: 3rem 1fr;
+    background: var(--bg-card);
+    transition: background 0.15s;
+  }
+
+  .job:hover {
+    background: var(--bg-card-hover);
+  }
+
+  .job-index {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 1.75rem 0 1.75rem;
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    border-right: 1px solid var(--border);
+  }
+
+  .job-body {
+    padding: 1.75rem 2rem;
+  }
+
+  .job-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .job-company {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.15rem;
+  }
+
+  .job-role {
+    font-size: 0.82rem;
+    color: var(--blue);
+  }
+
+  .job-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.3rem;
+    flex-shrink: 0;
+  }
+
+  .badge {
+    font-size: 0.68rem;
+    padding: 0.15rem 0.5rem;
+    background: var(--blue-dim);
+    color: var(--blue);
+    border-radius: 3px;
+    white-space: nowrap;
+  }
+
+  .job-period {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+  }
+
+  .job-desc {
+    font-size: 0.83rem;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    margin-bottom: 1rem;
+  }
+
+  .job-highlights {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .job-highlights li {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .job-highlights li span {
+    color: var(--blue);
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 520px) {
+    .job {
+      grid-template-columns: 1fr;
+    }
+    .job-index {
+      display: none;
+    }
+    .job-body {
+      padding: 1.5rem;
+    }
+    .job-info {
+      align-items: flex-start;
+    }
+  }
+</style>

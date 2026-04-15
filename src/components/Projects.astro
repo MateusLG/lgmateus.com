@@ -1,0 +1,344 @@
+---
+const featured = [
+  {
+    name: "Ativos-TI Embratur",
+    desc: "Sistema interno de gerenciamento de patrimônio e colaboradores da Embratur com +1.000 ativos cadastrados. Permite cadastrar e atribuir ativos ao sistema ou a colaboradores usando o patrimônio oficial da instituição.",
+    url: null,
+    demo: null,
+    stack: ["Python", "MySQL", "Docker", "SMTP"],
+    badge: "Embratur",
+  },
+  {
+    name: "Pagina-De-Chamados",
+    desc: "Portal de suporte de TI integrado ao Monday.com. Colaboradores abrem chamados, consultam status por e-mail ou ID e recebem notificações automáticas. A IA do Monday lê cada chamado e distribui automaticamente para a área correta: Suporte TIC, Desenvolvimento, Suporte de Sistemas ou Segurança.",
+    url: null,
+    demo: null,
+    stack: ["Python", "Flask", "Monday.com", "GraphQL", "Google OAuth", "Docker"],
+    badge: "Embratur",
+  },
+  {
+    name: "TurmasUnB",
+    desc: "Projeto open source para a Universidade de Brasília com +120 turmas cadastradas, podendo impactar mais de 7 mil alunos.",
+    url: "https://github.com/mateuslg/turmasunb",
+    demo: null,
+    stack: ["Python", "FastAPI", "JavaScript", "PostgreSQL", "Cloudflare"],
+    badge: "Open Source",
+  },
+  {
+    name: "VemDaChina",
+    desc: "E-commerce de importação direta da China. Logística e burocracia resolvidas para o cliente, do pedido à entrega.",
+    url: null,
+    demo: "https://vemdachina.com/",
+    stack: ["TypeScript", "React", "JavaScript", "Cloudflare"],
+    badge: "Produção",
+  },
+];
+
+const others = [
+  {
+    name: "LampIAo",
+    desc: "Aplicação web que usa IA para estruturar ideias em insights organizados.",
+    url: "https://github.com/mateuslg/lampiao",
+    stack: ["IA", "Web"],
+  },
+  {
+    name: "UnAjuda",
+    desc: "Plataforma colaborativa de Q&A para universitários.",
+    url: "https://github.com/mateuslg/unajuda",
+    stack: ["Q&A", "Web"],
+  },
+  {
+    name: "KubShorty",
+    desc: "Encurtador de URLs com FastAPI e Kubernetes.",
+    url: "https://github.com/mateuslg/kubshorty",
+    stack: ["FastAPI", "Kubernetes"],
+  },
+];
+---
+
+<section id="projetos">
+  <div class="section-inner">
+    <header class="section-header">
+      <span class="section-tag">// projetos</span>
+      <h2>O que construí</h2>
+    </header>
+
+    <div class="featured-grid">
+      {featured.map((p) => (
+        <article class="featured-card">
+          <div class="card-top">
+            <div class="card-title-row">
+              <h3>{p.name}</h3>
+              <span class="badge">{p.badge}</span>
+            </div>
+            <p class="card-desc">{p.desc}</p>
+          </div>
+          <div class="card-bottom">
+            <ul class="stack-list">
+              {p.stack.map((s) => <li>{s}</li>)}
+            </ul>
+            <div class="card-links">
+              {p.url && (
+                <a href={p.url} target="_blank" rel="noopener noreferrer" class="link-btn">
+                  GitHub →
+                </a>
+              )}
+              {p.demo && (
+                <a href={p.demo} target="_blank" rel="noopener noreferrer" class="link-btn link-primary">
+                  Ver site →
+                </a>
+              )}
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <div class="others-header">
+      <span>outros projetos</span>
+      <a
+        href="https://github.com/mateuslg"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="gh-link"
+      >ver todos no GitHub →</a>
+    </div>
+
+    <div class="others-grid">
+      {others.map((p) => (
+        <a
+          href={p.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="other-card"
+        >
+          <div class="other-top">
+            <span class="other-icon" aria-hidden="true">⬡</span>
+            <h4>{p.name}</h4>
+          </div>
+          <p>{p.desc}</p>
+          <ul class="stack-list small">
+            {p.stack.map((s) => <li>{s}</li>)}
+          </ul>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  #projetos {
+    padding: 6rem 2rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .section-inner {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .section-header {
+    margin-bottom: 3rem;
+  }
+
+  .section-tag {
+    display: block;
+    font-size: 0.78rem;
+    color: var(--blue);
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.05em;
+  }
+
+  h2 {
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  /* Featured */
+  .featured-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 2.5rem;
+  }
+
+  .featured-card {
+    background: var(--bg-card);
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1.5rem;
+    transition: background 0.15s;
+  }
+
+  .featured-card:hover {
+    background: var(--bg-card-hover);
+  }
+
+  .card-title-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  h3 {
+    font-size: 1rem;
+    font-weight: 700;
+  }
+
+  .badge {
+    font-size: 0.65rem;
+    padding: 0.15rem 0.5rem;
+    background: var(--blue-dim);
+    color: var(--blue);
+    border-radius: 3px;
+    white-space: nowrap;
+  }
+
+  .card-desc {
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    line-height: 1.65;
+  }
+
+  .card-bottom {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .stack-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    list-style: none;
+  }
+
+  .stack-list li {
+    font-size: 0.68rem;
+    padding: 0.15rem 0.45rem;
+    background: var(--blue-dim);
+    color: var(--blue);
+    border-radius: 3px;
+  }
+
+  .stack-list.small li {
+    font-size: 0.65rem;
+  }
+
+  .card-links {
+    display: flex;
+    gap: 0.5rem;
+    flex-shrink: 0;
+  }
+
+  .link-btn {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.65rem;
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    color: var(--text-secondary);
+    transition: all 0.15s;
+  }
+
+  .link-btn:hover {
+    border-color: var(--border-hover);
+    color: var(--text);
+  }
+
+  .link-primary {
+    border-color: var(--blue);
+    color: var(--blue);
+  }
+
+  .link-primary:hover {
+    background: var(--blue-dim);
+  }
+
+  /* Others */
+  .others-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+
+  .others-header span {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    letter-spacing: 0.05em;
+  }
+
+  .gh-link {
+    font-size: 0.75rem;
+    color: var(--blue);
+    transition: opacity 0.15s;
+  }
+
+  .gh-link:hover {
+    opacity: 0.75;
+  }
+
+  .others-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .other-card {
+    background: var(--bg-card);
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    transition: background 0.15s;
+    cursor: pointer;
+  }
+
+  .other-card:hover {
+    background: var(--bg-card-hover);
+  }
+
+  .other-top {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .other-icon {
+    font-size: 0.8rem;
+    color: var(--blue);
+  }
+
+  h4 {
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+
+  .other-card p {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    line-height: 1.55;
+    flex: 1;
+  }
+
+  @media (max-width: 700px) {
+    .featured-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

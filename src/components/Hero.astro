@@ -1,0 +1,234 @@
+---
+---
+
+<section id="hero">
+  <div class="grid-bg" aria-hidden="true"></div>
+
+  <div class="hero-content">
+    <div class="prompt" aria-label="Terminal prompt">
+      <span class="cursor-line">
+        <span class="prompt-char">$</span>
+        <span class="cmd" id="typed-cmd"></span>
+        <span class="cursor" aria-hidden="true">█</span>
+      </span>
+    </div>
+
+    <h1>
+      Mateus Lira
+    </h1>
+
+    <p class="subtitle">
+      6 anos construindo soluções robustas e escaláveis com{" "}
+      <span class="highlight">Python</span>,{" "}
+      <span class="highlight">PHP</span>,{" "}
+      <span class="highlight">JS</span> e{" "}
+      <span class="highlight">automações com IA</span>.
+    </p>
+
+    <div class="hero-actions">
+      <a href="#contato" class="btn btn-primary">Contato</a>
+      <a
+        href="https://www.linkedin.com/in/lgmateus/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn btn-ghost"
+      >LinkedIn</a>
+      <a
+        href="https://github.com/mateuslg"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn btn-ghost"
+      >GitHub</a>
+    </div>
+  </div>
+
+  <div class="scroll-hint" aria-hidden="true">
+    <span>scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<style>
+  #hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 6rem 2rem 4rem;
+    overflow: hidden;
+  }
+
+  .grid-bg {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(var(--border) 1px, transparent 1px),
+      linear-gradient(90deg, var(--border) 1px, transparent 1px);
+    background-size: 40px 40px;
+    mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, black 30%, transparent 100%);
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  .hero-content {
+    position: relative;
+    max-width: 700px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .prompt {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    min-height: 1.5em;
+  }
+
+  .prompt-char {
+    color: var(--blue);
+    margin-right: 0.5rem;
+    font-weight: 700;
+  }
+
+  .cursor {
+    color: var(--blue);
+    animation: blink 1s step-end infinite;
+    font-size: 0.85rem;
+  }
+
+  .cursor.hidden {
+    opacity: 0;
+  }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+
+  h1 {
+    font-size: clamp(2.5rem, 7vw, 4.5rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin-bottom: 1.25rem;
+    opacity: 0;
+    transform: translateY(16px);
+    animation: fadeUp 0.6s ease 1s forwards;
+  }
+
+  .subtitle {
+    font-size: clamp(0.9rem, 2.5vw, 1.05rem);
+    color: var(--text-secondary);
+    max-width: 520px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.7;
+    opacity: 0;
+    transform: translateY(16px);
+    animation: fadeUp 0.6s ease 1.15s forwards;
+  }
+
+  .highlight {
+    color: var(--blue);
+    font-weight: 500;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    opacity: 0;
+    transform: translateY(16px);
+    animation: fadeUp 0.6s ease 1.3s forwards;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.55rem 1.25rem;
+    font-family: inherit;
+    font-size: 0.85rem;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    font-weight: 500;
+  }
+
+  .btn-primary {
+    background: var(--blue);
+    color: #fff;
+    border-color: var(--blue);
+  }
+
+  .btn-primary:hover {
+    background: #2563eb;
+    border-color: #2563eb;
+  }
+
+  .btn-ghost {
+    background: transparent;
+    color: var(--text-secondary);
+    border-color: var(--border);
+  }
+
+  .btn-ghost:hover {
+    border-color: var(--border-hover);
+    color: var(--text);
+  }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    opacity: 0;
+    animation: fadeUp 0.6s ease 1.8s forwards;
+  }
+
+  .scroll-line {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, var(--text-muted), transparent);
+    animation: scrollDown 1.5s ease-in-out 2s infinite;
+  }
+
+  @keyframes scrollDown {
+    0% { transform: scaleY(0); transform-origin: top; opacity: 0; }
+    50% { transform: scaleY(1); transform-origin: top; opacity: 1; }
+    51% { transform: scaleY(1); transform-origin: bottom; }
+    100% { transform: scaleY(0); transform-origin: bottom; opacity: 0; }
+  }
+
+  @keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+
+<script>
+  const cmd = document.getElementById('typed-cmd')!;
+  const cursor = document.querySelector('.cursor') as HTMLElement;
+  const text = 'whoami';
+  let i = 0;
+
+  function type() {
+    if (i < text.length) {
+      cmd.textContent += text[i++];
+      setTimeout(type, 80 + Math.random() * 60);
+    } else {
+      setTimeout(() => cursor.classList.add('hidden'), 800);
+    }
+  }
+
+  setTimeout(type, 400);
+</script>

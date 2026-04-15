@@ -1,0 +1,160 @@
+---
+---
+
+<nav id="nav">
+  <a href="/" class="logo" aria-label="lgmateus home">
+    lg<strong>mateus</strong>
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="#habilidades" data-section="habilidades">habilidades</a></li>
+    <li><a href="#experiencia" data-section="experiencia">experiência</a></li>
+    <li><a href="#projetos" data-section="projetos">projetos</a></li>
+    <li><a href="#contato" data-section="contato">contato</a></li>
+  </ul>
+
+  <div class="nav-actions">
+    <button id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+      <span class="icon-dark">◑</span>
+      <span class="icon-light" style="display:none">◐</span>
+    </button>
+  </div>
+</nav>
+
+<style>
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    height: 56px;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    transition: background 0.2s, border-color 0.2s;
+  }
+
+  [data-theme="light"] nav {
+    background: rgba(248, 248, 248, 0.9);
+  }
+
+  .logo {
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    transition: color 0.2s;
+  }
+
+  .logo strong {
+    font-weight: 700;
+  }
+
+  .logo:hover {
+    color: var(--blue);
+  }
+
+  .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 0;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 0.35rem 0.75rem;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    transition: color 0.2s;
+    border-radius: 4px;
+  }
+
+  .nav-links a:hover,
+  .nav-links a.active {
+    color: var(--text);
+  }
+
+  .nav-links a.active::before {
+    content: "> ";
+    color: var(--blue);
+  }
+
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  #theme-toggle {
+    background: none;
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    cursor: pointer;
+    padding: 0.3rem 0.5rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.2s, color 0.2s;
+    line-height: 1;
+  }
+
+  #theme-toggle:hover {
+    border-color: var(--border-hover);
+    color: var(--text);
+  }
+
+  @media (max-width: 640px) {
+    .nav-links {
+      display: none;
+    }
+  }
+</style>
+
+<script>
+  // Theme toggle
+  const toggle = document.getElementById('theme-toggle')!;
+  const iconDark = toggle.querySelector('.icon-dark') as HTMLElement;
+  const iconLight = toggle.querySelector('.icon-light') as HTMLElement;
+
+  const saved = localStorage.getItem('theme');
+  if (saved === 'light') {
+    document.documentElement.setAttribute('data-theme', 'light');
+    iconDark.style.display = 'none';
+    iconLight.style.display = '';
+  }
+
+  toggle.addEventListener('click', () => {
+    const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+    if (isLight) {
+      document.documentElement.removeAttribute('data-theme');
+      localStorage.setItem('theme', 'dark');
+      iconDark.style.display = '';
+      iconLight.style.display = 'none';
+    } else {
+      document.documentElement.setAttribute('data-theme', 'light');
+      localStorage.setItem('theme', 'light');
+      iconDark.style.display = 'none';
+      iconLight.style.display = '';
+    }
+  });
+
+  // Active section on scroll
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a[data-section]');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        navLinks.forEach((link) => {
+          link.classList.toggle('active', link.getAttribute('data-section') === entry.target.id);
+        });
+      }
+    });
+  }, { rootMargin: '-40% 0px -55% 0px' });
+
+  sections.forEach((s) => observer.observe(s));
+</script>

@@ -1,0 +1,169 @@
+---
+---
+
+<section id="contato">
+  <div class="section-inner">
+    <header class="section-header">
+      <span class="section-tag">// contato</span>
+      <h2>Vamos conversar?</h2>
+      <p class="subtitle">Disponível para projetos freelance, parcerias e oportunidades.</p>
+    </header>
+
+    <div class="contact-links">
+      <a href="mailto:contato@lgmateus.com" class="contact-item">
+        <span class="contact-icon" aria-hidden="true">@</span>
+        <div>
+          <span class="contact-label">E-mail</span>
+          <span class="contact-value">contato@lgmateus.com</span>
+        </div>
+        <span class="arrow" aria-hidden="true">→</span>
+      </a>
+
+      <a
+        href="https://www.linkedin.com/in/lgmateus/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="contact-item"
+      >
+        <span class="contact-icon" aria-hidden="true">in</span>
+        <div>
+          <span class="contact-label">LinkedIn</span>
+          <span class="contact-value">lgmateus</span>
+        </div>
+        <span class="arrow" aria-hidden="true">→</span>
+      </a>
+
+      <a
+        href="https://github.com/mateuslg"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="contact-item"
+      >
+        <span class="contact-icon" aria-hidden="true">gh</span>
+        <div>
+          <span class="contact-label">GitHub</span>
+          <span class="contact-value">mateuslg</span>
+        </div>
+        <span class="arrow" aria-hidden="true">→</span>
+      </a>
+    </div>
+
+    <p class="location">
+      <span aria-hidden="true">◎</span> Brasil — remoto
+    </p>
+  </div>
+</section>
+
+<style>
+  #contato {
+    padding: 6rem 2rem 8rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .section-inner {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .section-header {
+    margin-bottom: 3rem;
+  }
+
+  .section-tag {
+    display: block;
+    font-size: 0.78rem;
+    color: var(--blue);
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.05em;
+  }
+
+  h2 {
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.5rem;
+  }
+
+  .subtitle {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+  }
+
+  .contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    max-width: 560px;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.1rem 1.5rem;
+    background: var(--bg-card);
+    transition: background 0.15s;
+    color: var(--text);
+  }
+
+  .contact-item:hover {
+    background: var(--bg-card-hover);
+  }
+
+  .contact-item:hover .arrow {
+    transform: translateX(4px);
+    color: var(--blue);
+  }
+
+  .contact-icon {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--blue);
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--blue-glow);
+    border-radius: 4px;
+    background: var(--blue-dim);
+    flex-shrink: 0;
+  }
+
+  .contact-item > div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    flex: 1;
+  }
+
+  .contact-label {
+    font-size: 0.68rem;
+    color: var(--text-muted);
+    letter-spacing: 0.05em;
+  }
+
+  .contact-value {
+    font-size: 0.85rem;
+    font-weight: 500;
+  }
+
+  .arrow {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    transition: transform 0.15s, color 0.15s;
+  }
+
+  .location {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+</style>

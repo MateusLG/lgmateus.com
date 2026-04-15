@@ -1,0 +1,151 @@
+---
+const categories = [
+  {
+    title: "Linguagens",
+    icon: "{ }",
+    items: ["Python", "TypeScript", "JavaScript", "PHP", "SQL"],
+  },
+  {
+    title: "Frameworks",
+    icon: "⬡",
+    items: ["FastAPI", "React", "Node.js", "Next.js", "Django", "Flask", "WordPress"],
+  },
+  {
+    title: "Bancos de Dados",
+    icon: "⊞",
+    items: ["PostgreSQL", "MySQL", "MongoDB", "Redis", "Firebase", "MariaDB", "Supabase"],
+  },
+  {
+    title: "Cloud & DevOps",
+    icon: "↑",
+    items: ["Google Cloud", "AWS", "Docker", "Kubernetes", "CI/CD", "Vercel", "Cloudflare"],
+  },
+  {
+    title: "Especialização",
+    icon: "✦",
+    items: ["APIs RESTful", "Crocoblock", "Elementor", "N8N", "Automações & IA", "LLMs", "RAG"],
+  },
+  {
+    title: "Ferramentas & Gestão",
+    icon: "⚙",
+    items: ["Monday.com", "Git", "Linux", "Postman", "Figma", "Scrum", "Kanban"],
+  },
+];
+---
+
+<section id="habilidades">
+  <div class="section-inner">
+    <header class="section-header">
+      <span class="section-tag">// habilidades</span>
+      <h2>Stack técnico</h2>
+    </header>
+
+    <div class="skills-grid">
+      {categories.map((cat) => (
+        <div class="skill-card">
+          <div class="card-header">
+            <span class="card-icon" aria-hidden="true">{cat.icon}</span>
+            <h3>{cat.title}</h3>
+          </div>
+          <ul class="tag-list">
+            {cat.items.map((item) => (
+              <li class="tag">{item}</li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  #habilidades {
+    padding: 6rem 2rem;
+  }
+
+  .section-inner {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .section-header {
+    margin-bottom: 3rem;
+  }
+
+  .section-tag {
+    display: block;
+    font-size: 0.78rem;
+    color: var(--blue);
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.05em;
+  }
+
+  h2 {
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .skill-card {
+    background: var(--bg-card);
+    padding: 1.5rem;
+    transition: background 0.15s;
+  }
+
+  .skill-card:hover {
+    background: var(--bg-card-hover);
+  }
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 1rem;
+  }
+
+  .card-icon {
+    font-size: 0.9rem;
+    color: var(--blue);
+    font-family: monospace;
+    width: 1.4rem;
+    text-align: center;
+  }
+
+  h3 {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text);
+    letter-spacing: 0.02em;
+  }
+
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    list-style: none;
+  }
+
+  .tag {
+    font-size: 0.72rem;
+    padding: 0.2rem 0.55rem;
+    background: var(--blue-dim);
+    color: var(--blue);
+    border-radius: 3px;
+    border: 1px solid transparent;
+    transition: border-color 0.15s;
+  }
+
+  .skill-card:hover .tag {
+    border-color: var(--blue-glow);
+  }
+</style>
