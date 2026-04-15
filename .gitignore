@@ -1,31 +1,33 @@
-# build output
+# ── Build ────────────────────────────────────────────────
 dist/
-# generated types
 .astro/
 
-# dependencies
+# ── Dependencies ─────────────────────────────────────────
 node_modules/
 
-# logs
+# ── Environment ──────────────────────────────────────────
+.env
+.env.*
+!.env.example
+
+# ── Logs ─────────────────────────────────────────────────
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-
-# environment variables
-.env
-.env.production
-
-# macOS-specific files
+# ── OS ───────────────────────────────────────────────────
 .DS_Store
+Thumbs.db
+desktop.ini
 
-# jetbrains setting folder
-.idea/
-
-# editor config
+# ── Editors ──────────────────────────────────────────────
 .vscode/
+.idea/
+*.swp
+*.swo
 
-# working notes
+# ── Working notes ────────────────────────────────────────
 *.md
 !README.md
