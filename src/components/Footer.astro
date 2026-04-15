@@ -4,7 +4,7 @@
 <footer>
   <span>© 2026 lgmateus</span>
   <span class="sep" aria-hidden="true">—</span>
-  <span class="muted">built with care</span>
+  <span class="muted">built with <a href="https://astro.build" target="_blank" rel="noopener noreferrer">Astro</a></span>
 </footer>
 
 <button id="back-to-top" aria-label="Voltar ao topo" title="Voltar ao topo">↑</button>
@@ -23,6 +23,15 @@
 
   .sep {
     opacity: 0.3;
+  }
+
+  .muted a {
+    color: var(--blue);
+    transition: opacity 0.15s;
+  }
+
+  .muted a:hover {
+    opacity: 0.7;
   }
 
   #back-to-top {

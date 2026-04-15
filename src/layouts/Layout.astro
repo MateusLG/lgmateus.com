@@ -6,7 +6,7 @@ interface Props {
 
 const {
   title = "Mateus Lira — Desenvolvedor Fullstack",
-  description = "6 anos construindo soluções robustas e escaláveis com Python, PHP, JS e automações com IA.",
+  description = "Desenvolvo sistemas internos, APIs e automações com IA que reduzem trabalho manual em empresas. 6 anos de experiência em projetos de grande porte.",
 } = Astro.props;
 ---
 
@@ -16,6 +16,17 @@ const {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
+    <meta name="author" content="Mateus Lira" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://lgmateus.com/" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="https://lgmateus.com/og.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="https://lgmateus.com/og.png" />
+    <link rel="canonical" href="https://lgmateus.com/" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
